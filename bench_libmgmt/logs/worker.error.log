@@ -1,0 +1,57 @@
+2025-08-20 11:52:26,740 Could not connect to Redis instance: Error 111 connecting to 127.0.0.1:11003. Connection refused. Retrying in 2 seconds...
+2025-08-20 12:02:09,521 Could not connect to Redis instance: Error 111 connecting to 127.0.0.1:11003. Connection refused. Retrying in 2 seconds...
+2025-08-20 12:02:09,864 Worker rq:worker:a17528e23f07417c8e6a7d437bab98d9: found an unhandled exception, quitting...
+Traceback (most recent call last):
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/redis/connection.py", line 1536, in get_connection
+    if connection.can_read() and self.cache is None:
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/redis/connection.py", line 622, in can_read
+    return self._parser.can_read(timeout)
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/redis/_parsers/hiredis.py", line 99, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/redis/_parsers/hiredis.py", line 110, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/redis/connection.py", line 385, in connect_check_health
+    sock = self.retry.call_with_retry(
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/redis/retry.py", line 87, in call_with_retry
+    return do()
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/redis/connection.py", line 386, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/redis/connection.py", line 797, in _connect
+    raise err
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/redis/connection.py", line 781, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/rq/worker.py", line 622, in work
+    self.execute_job(job, queue)
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/rq/worker.py", line 1406, in execute_job
+    self.monitor_work_horse(job, queue)
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/rq/worker.py", line 1370, in monitor_work_horse
+    self.set_current_job_working_time(0)
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/rq/worker.py", line 751, in set_current_job_working_time
+    connection.hset(self.key, 'current_job_working_time', current_job_working_time)
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/redis/commands/core.py", line 5102, in hset
+    return self.execute_command("HSET", name, *pieces)
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/redis/client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/redis/client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/redis/connection.py", line 1540, in get_connection
+    connection.connect()
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+  File "/home/aravind/bench_libmgmt/env/lib/python3.10/site-packages/redis/connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11003. Connection refused.
+2025-08-20 13:03:34,639 Could not connect to Redis instance: Error 111 connecting to 127.0.0.1:11003. Connection refused. Retrying in 2 seconds...
+2025-08-20 14:41:32,322 Could not connect to Redis instance: Error 111 connecting to 127.0.0.1:11003. Connection refused. Retrying in 2 seconds...

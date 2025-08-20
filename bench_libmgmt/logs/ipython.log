@@ -1,0 +1,22 @@
+2025-08-20 11:28:56,275 INFO ipython === bench console session ===
+2025-08-20 11:28:56,276 INFO ipython === session end ===
+2025-08-20 11:37:26,133 INFO ipython === bench console session ===
+2025-08-20 11:37:26,134 INFO ipython e\
+exit
+2025-08-20 11:37:26,134 INFO ipython bench --site lib_local add-to-hosts
+2025-08-20 11:37:26,135 INFO ipython Exit
+2025-08-20 11:37:26,135 INFO ipython === session end ===
+2025-08-20 11:47:50,019 INFO ipython === bench console session ===
+2025-08-20 11:47:50,020 INFO ipython === session end ===
+2025-08-20 11:48:12,083 INFO ipython === bench console session ===
+2025-08-20 11:48:12,083 INFO ipython print("Hello")
+2025-08-20 11:48:12,084 INFO ipython === session end ===
+2025-08-20 14:03:07,714 INFO ipython === bench console session ===
+2025-08-20 14:03:07,715 INFO ipython \q
+2025-08-20 14:03:07,716 INFO ipython === session end ===
+2025-08-20 14:23:16,969 INFO ipython === bench console session ===
+2025-08-20 14:23:16,971 INFO ipython from frappe.modules.export_file import export_doc
+export_doc("DocType", "Article", module="Library Management")
+2025-08-20 14:23:16,971 INFO ipython from frappe.modules.export_file import export_doc
+2025-08-20 14:23:16,971 INFO ipython export_doc("DocType", "Article", module="Library Management")
+2025-08-20 14:23:16,972 INFO ipython === session end ===
