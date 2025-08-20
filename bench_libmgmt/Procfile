@@ -3,7 +3,7 @@ redis_cache: redis-server config/redis_cache.conf
 redis_queue: redis-server config/redis_queue.conf
 
 
-web: bench serve  --port 8005
+web: bench serve  --port 8001
 
 
 socketio: /home/aravind/.nvm/versions/node/v22.18.0/bin/node apps/frappe/socketio.js
